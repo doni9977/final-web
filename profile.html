@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Profile - Baryp-Kel Airlines</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="image/logo.jpeg" alt="Baryp-Kel Logo"> 
+    </a>
+    <div class="nav-right">
+      <button id="theme-toggle-btn" class="btn-theme-toggle">Night Mode</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="login.html" class="btn-header">Login</a>
+    </div>
+  </header>
+
+  <section class="login-section">
+    <div class="login-box">
+      <h1>Your Profile</h1>
+      <div style="text-align: left; margin-top: 20px;">
+        <h3 id="profile-name" style="color: #002366; margin-bottom: 10px;">Loading...</h3>
+        <p id="profile-email" style="color: #333; font-size: 16px;">Loading...</p>
+      </div>
+      <button id="logout-btn" class="btn-filled-form" style="margin-top: 25px;">
+        Log Out
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Baryp-Kel Airlines | Danial & Nurgaly</p>
+  </footer>
+  
+  <script src="script.js"></script> 
+  <script src="profile.js"></script> 
+</body>
+</html>

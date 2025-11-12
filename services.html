@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baryp-Kel Airlines | Services</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="image/logo.jpeg" alt="Baryp-Kel Logo"> 
+    </a>
+    <div class="nav-right">
+      <button id="theme-toggle-btn" class="btn-theme-toggle">Night Mode</button> <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="login.html" class="btn-header">Login</a>
+    </div>
+  </header>
+
+  <main class="services-main">
+    <section class="services-section" id="main-services-content">
+      <h1 class="services-title">Our Services</h1>
+      
+      <h2>Popular Cities in Kazakhstan</h2>
+      
+      <div class="city-carousel-wrapper">
+        <div class="city-carousel-inner">
+          <div class="city-carousel">
+            </div>
+          </div>
+      </div>
+      
+<h2 class="flight-classes-title" id="flight-classes">Flight Classes</h2>
+      
+      <div class="filter-search-bar">
+        <input type="text" id="class-filter-input" placeholder="Filter Flight Classes by name...">
+      </div>
+      <div class="flight-classes-grid">
+        <div class="class-card-item">
+          <div class="class-card">
+            <img src="image/economy.jpg" class="card-img" alt="Economy Class cabin">
+            <div class="card-content">
+              <h3>Economy Class</h3>
+              <p>Affordable travel with essential comfort and service.</p>
+              <a href="#" class="btn-outline-small btn-learn-more" data-class="economy">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="class-card-item">
+          <div class="class-card">
+            <img src="image/comfort.jpg" class="card-img" alt="Comfort Class seat">
+            <div class="card-content">
+              <h3>Comfort Class</h3>
+              <p>Extra space, priority boarding, and better seating.</p>
+             <a href="#" class="btn-outline-small btn-learn-more" data-class="comfort">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="class-card-item">
+          <div class="class-card">
+            <img src="image/business.jpeg" class="card-img" alt="Business Class suite">
+            <div class="card-content">
+              <h3>Business Class</h3>
+              <p>Premium service, luxury seats, and exclusive lounges.</p>
+              <a href="#" class="btn-outline-small btn-learn-more" data-class="business">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="class-modal-overlay" class="class-modal-overlay">
+        <div class="class-modal-content">
+          <button id="class-modal-close" class="class-modal-close">&times;</button>
+          <h2 id="class-modal-title"></h2>
+           <p id="class-modal-description"></p>
+    </div>
+  </div>
+    </section>
+    
+  </main>
+  
+  <footer class="footer-services">
+    <div class="container-custom">
+      <p class="mb-0">&copy; 2025 Baryp-Kel Airlines | Danial & Nurgaly</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>

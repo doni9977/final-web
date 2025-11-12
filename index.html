@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baryp-Kel Airlines</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+  
+  <style>
+    .responsive-cards-section {
+      padding: 60px 20px;
+      text-align: center;
+      color: #7f7d7d; 
+    }
+
+    .responsive-cards-section h2 {
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #002366; 
+    }
+
+    .mq-card-container {
+      display: flex;
+      flex-direction: column; 
+      gap: 30px; 
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .mq-card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px; 
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1); 
+      transition: transform 0.3s ease;
+      text-align: left;
+    }
+
+    .mq-card:hover {
+        transform: translateY(-5px); 
+    }
+
+    .mq-card h3 {
+        color: #002366;
+        margin-bottom: 10px;
+    }
+
+
+    @media (min-width: 768px) {
+      .mq-card-container {
+        flex-direction: row; 
+        flex-wrap: wrap;
+      }
+      .mq-card {
+        flex: 1 1 calc(50% - 30px); 
+      }
+    }
+
+    @media (min-width: 992px) {
+      .mq-card {
+        flex: 1 1 calc(33.333% - 30px);
+      }
+    }
+    body.dark-theme .responsive-cards-section {
+    background: #1e1e1e !important;
+    color: #c0c0c0 !important; 
+   }
+
+    body.dark-theme .fly-smarter-section {
+    background: #1e1e1e !important;
+  }
+
+    body.dark-theme .fly-smarter-section .lead-text,
+    body.dark-theme .fly-smarter-section .list-item {
+    color: #c0c0c0 !important;
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <img src="image/logo.jpeg" alt="Baryp-Kel Logo"> 
+  </a>
+
+  <div class="nav-right">
+    <button id="theme-toggle-btn" class="btn-theme-toggle">Night Mode</button> <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" class="btn-header">Login</a>
+  </div>
+</header>
+  <section class="hero">
+    <div class="hero-text">
+      <h2 id="time-based-greeting" style="color: #ffd700; font-size: 30px; margin-bottom: 10px;"></h2> <h1><span>WELCOME TO</span><BR>BARYP-KEL</h1><p >Where safety, comfort, and affordability meet. We connect people and cities with modern aircraft, professional crew, and service designed to make every journey unforgettable.</p>
+      <div class="hero-buttons">
+        <a href="about.html" class="btn-outline">More About Us</a>
+        <a href="#" class="btn-filled">Buy Ticket</a> </div>
+    </div>
+  </section>
+
+  <div id="popup-overlay" class="popup-overlay">
+    <div class="popup-content">
+      <button id="popup-close">&times;</button>
+      <h2>Contact Us</h2>
+      <form class="popup-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="3" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+
+  <section class="ticket-booking">
+    <h2>Book Your Flight</h2>
+    <form>
+      <div class="input-autocomplete-wrapper">
+        <input type="text" placeholder="From" id="departure-city" autocomplete="off">
+        <div id="city-suggestions" class="autocomplete-suggestions"></div>
+      </div>
+      
+      <input type="text" placeholder="To">
+      
+      <input type="date" placeholder="Departure">
+      <input type="date" placeholder="Return">
+      <input type="number" min="1" value="1" placeholder="Passengers">
+      
+      <button type="submit">Search Flights</button>
+    </form>
+  </section>
+
+  <section class="responsive-cards-section">
+    <h2>Why Choose Baryp-Kel?</h2>
+    <div class="mq-card-container">
+      <div class="mq-card">
+        <h3>Uncompromising Safety</h3>
+        <p>Your safety is our top priority. Our modern fleet is maintained to the highest international standards, and our experienced crew is trained for any situation.</p>
+      </div>
+      <div class="mq-card">
+        <h3>Exceptional Comfort</h3>
+        <p>From spacious seating to quality in-flight service, we ensure your journey is as comfortable and pleasant as possible, whether you're flying for business or leisure.</p>
+      </div>
+      <div class="mq-card">
+        <h3>Affordable Fares</h3>
+        <p>We believe that air travel should be accessible to everyone. We offer competitive pricing and flexible fare options without compromising on quality or service.</p>
+      </div>
+    </div>
+  </section>
+
+<section class="fly-smarter-section">
+  <div class="container-custom">
+    <div class="fly-smarter-content">
+      <div class="fly-smarter-image-block">
+        <img src="image/Almaty.jpeg" alt="Discover Kazakhstan" class="responsive-img">
+      </div>
+      <div class="fly-smarter-text-block">
+        <h2 class="section-title">Fly Smarter with Baryp-Kel</h2>
+        <p class="lead-text">Plan flexible routes, compare fares, and get the best deals across Central Asia.</p>
+        <ul class="no-list-style">
+          <li class="list-item">✓ Easy booking and 24/7 support</li>
+          <li class="list-item">✓ Modern fleet and high safety standards</li>
+          <li class="list-item">✓ Rewards and special offers for frequent travelers</li>
+        </ul>
+        <a href="services.html" class="btn-filled-large">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="what-you-get-section">
+  <div class="container-custom">
+    <h2 class="text-center section-title">What You Get</h2>
+    <div class="card-grid">
+      <div class="service-card-item">
+        <div class="service-card-custom">
+          <img src="image/economy.jpg" class="card-img" alt="Affordable fares">
+          <div class="card-body-custom">
+            <h3 class="card-title-custom">Affordable Fares</h3>
+            <p class="card-text-custom">Flexible prices with no hidden fees. Save on every flight.</p>
+<a href="services.html#flight-classes" class="btn-outline-small">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card-item">
+        <div class="service-card-custom">
+          <img src="image/comfort.jpg" class="card-img" alt="Comfort on board">
+          <div class="card-body-custom">
+            <h3 class="card-title-custom">Comfort on Board</h3>
+            <p class="card-text-custom">Extra space, comfortable seats, and an attentive crew.</p>
+<a href="services.html#flight-classes" class="btn-outline-small">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="service-card-item">
+        <div class="service-card-custom">
+          <img src="image/business.jpeg" class="card-img" alt="Business services">
+          <div class="card-body-custom">
+            <h3 class="card-title-custom">Business Services</h3>
+            <p class="card-text-custom">Priority boarding, lounges, and premium service for business trips.</p>
+<a href="services.html#flight-classes" class="btn-outline-small">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Baryp-Kel Airlines | Danial & Nurgaly<span id="current-date-time"></span></p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
