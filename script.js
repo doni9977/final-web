@@ -12,6 +12,8 @@ const cityData = [
 
 const notificationSound = new Audio('notification.mp3'); 
 
+const MY_WEATHER_API_KEY = '7cfadac64d174751106f644cacffdd88'; 
+
 function playNotificationSound() {
     notificationSound.currentTime = 0; 
     notificationSound.play().catch(error => {
@@ -415,6 +417,52 @@ function setupCityCarouselAutoplay(interval = 5000) {
     setInterval(nextSlide, interval);
 }
 
+async function fetchWeatherForCities(apiKey) {
+    const weatherContainer = document.getElementById('weather-container');
+    if (!weatherContainer) return; 
+
+    const cityNames = cityData.map(city => city.name);
+
+    weatherContainer.innerHTML = '<h3>Загрузка погоды...</h3>'; 
+
+    let weatherHTML = '';
+
+    for (const cityName of cityNames) {
+        try {
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric&lang=ru`);
+            
+            if (!response.ok) {
+                throw new Error(`Не могу найти город: ${cityName}`);
+            }
+
+            const data = await response.json();
+
+            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            const temp = Math.round(data.main.temp);
+            const description = data.weather[0].description;
+
+            weatherHTML += `
+                <div class="weather-card">
+                    <h3>${data.name}</h3>
+                    <img src="${iconUrl}" alt="${description}">
+                    <div class="temp">${temp}°C</div>
+                    <div class="desc">${description}</div>
+                </div>
+            `;
+        } catch (error) {
+            console.warn(error);
+            weatherHTML += `
+                <div class="weather-card">
+                    <h3>${cityName}</h3>
+                    <p style="font-size:12px;">Не удалось<br>загрузить погоду</p>
+                </div>
+            `;
+        }
+    }
+    
+    weatherContainer.innerHTML = weatherHTML;
+}
+
 function updateDateTime() {
     const dateTimeElement = document.getElementById('current-date-time');
 
@@ -738,6 +786,8 @@ $(document).ready(function() {
     displayTimeBasedGreeting();
     setupContactFormSubmission();
     setupSearchHighlighting(); 
+    
+    fetchWeatherForCities(MY_WEATHER_API_KEY);
     
     if (document.querySelector('.city-carousel')) { 
         renderCityCarousel();
